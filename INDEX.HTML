@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIET Mentorship Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SLIET Mentorship Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#mentors">Mentors</a></li>
+                <li><a href="#booking">Book a Session</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Login Section -->
+        <section id="login">
+            <h2>Student Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <!-- Mentors Section with Carousel -->
+        <section id="mentors">
+            <h2>Meet Our Mentors</h2>
+            <div class="mentor-carousel">
+                <!-- Mentor Card 1 -->
+                <div class="mentor-card">
+                    <img src="mentor1.jpg" alt="Dr. John Doe">
+                    <h3>Dr. John Doe</h3>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Email: johndoe@sliet.ac.in</p>
+                    <p>Qualifications: PhD in Computer Science</p>
+                    <button onclick="showAvailability('mentor1')">Check Availability</button>
+                    <div class="availability" id="availability-mentor1"></div>
+                </div>
+
+                <!-- Mentor Card 2 -->
+                <div class="mentor-card">
+                    <img src="mentor2.jpg" alt="Dr. Jane Smith">
+                    <h3>Dr. Jane Smith</h3>
+                    <p>Phone: 987-654-3210</p>
+                    <p>Email: janesmith@sliet.ac.in</p>
+                    <p>Qualifications: M.Tech in Software Engineering</p>
+                    <button onclick="showAvailability('mentor2')">Check Availability</button>
+                    <div class="availability" id="availability-mentor2"></div>
+                </div>
+
+                <!-- Mentor Card 3 -->
+                <div class="mentor-card">
+                    <img src="mentor3.jpg" alt="Prof. Alan Turing">
+                    <h3>Prof. Alan Turing</h3>
+                    <p>Phone: 234-567-8901</p>
+                    <p>Email: alanturing@sliet.ac.in</p>
+                    <p>Qualifications: PhD in Mathematics</p>
+                    <button onclick="showAvailability('mentor3')">Check Availability</button>
+                    <div class="availability" id="availability-mentor3"></div>
+                </div>
+
+                <!-- Mentor Card 4 -->
+                <div class="mentor-card">
+                    <img src="mentor4.jpg" alt="Dr. Ada Lovelace">
+                    <h3>Dr. Ada Lovelace</h3>
+                    <p>Phone: 345-678-9012</p>
+                    <p>Email: adalovelace@sliet.ac.in</p>
+                    <p>Qualifications: M.Sc in Computer Science</p>
+                    <button onclick="showAvailability('mentor4')">Check Availability</button>
+                    <div class="availability" id="availability-mentor4"></div>
+                </div>
+
+                <!-- Mentor Card 5 -->
+                <div class="mentor-card">
+                    <img src="mentor5.jpg" alt="Dr. Grace Hopper">
+                    <h3>Dr. Grace Hopper</h3>
+                    <p>Phone: 456-789-0123</p>
+                    <p>Email: gracehopper@sliet.ac.in</p>
+                    <p>Qualifications: PhD in Computer Science Education</p>
+                    <button onclick="showAvailability('mentor5')">Check Availability</button>
+                    <div class="availability" id="availability-mentor5"></div>
+                </div>
+
+                <!-- Mentor Card 6 -->
+                <div class="mentor-card">
+                    <img src="mentor6.jpg" alt="Prof. Tim Berners-Lee">
+                    <h3>Prof. Tim Berners-Lee</h3>
+                    <p>Phone: 567-890-1234</p>
+                    <p>Email: timbl@sliet.ac.in</p>
+                    <p>Qualifications: PhD in Information Systems</p>
+                    <button onclick="showAvailability('mentor6')">Check Availability</button>
+                    <div class="availability" id="availability-mentor6"></div>
+                </div>
+
+                <!-- Mentor Card 7 -->
+                <div class="mentor-card">
+                    <img src="mentor7.jpg" alt="Dr. Elon Musk">
+                    <h3>Dr. Elon Musk</h3>
+                    <p>Phone: 678-901-2345</p>
+                    <p>Email: elonmusk@sliet.ac.in</p>
+                    <p>Qualifications: M.Tech in Robotics</p>
+                    <button onclick="showAvailability('mentor7')">Check Availability</button>
+                    <div class="availability" id="availability-mentor7"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking">
+            <h2>Book a Session</h2>
+            <form id="booking-form">
+                <label for="mentor">Select Mentor:</label>
+                <select id="mentor" required>
+                    <option value="" disabled selected>Select a mentor</option>
+                    <!-- Add options for mentors -->
+                    <option value="mentor1">Dr. John Doe</option>
+                    <!-- Add more options for mentors -->
+                </select>
+
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" required>
+
+                <button type="submit">Book Session</button>
+            </form>
+
+            <div id="confirmation-message"></div>
+
+            <!-- Cart Section -->
+            <h3>Your Bookings:</h3>
+            <ul id="booking-cart"></ul>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
+            <h2>Feedback</h2>
+            <form id="feedback-form">
+                <label for="feedback-name">Name:</label>
+                <input type="text" id="feedback-name" required>
+
+                <label for="feedback-message">Feedback:</label>
+                <textarea id="feedback-message" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+
+            <!-- Feedback Display -->
+            <div id="feedback-display"></div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@sliet.ac.in</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 SLIET. All rights reserved.
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
