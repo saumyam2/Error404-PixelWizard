@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentors - SLIET Mentorship Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+        }
+
+        .mentor-carousel {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .mentor-card {
+            background: #1c1c1c;
+            border-radius: 10px;
+            width: 250px;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+            perspective: 1000px; /* Perspective for 3D effect */
+            transition: transform 0.3s ease-in-out; /* Transition for smooth hover effect */
+        }
+
+        .mentor-card:hover {
+            transform: rotateY(10deg) rotateX(10deg); /* 3D rotation on hover */
+        }
+
+        .mentor-details {
+            display: none; /* Initially hidden details */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            color: #e0e0e0;
+            transition: opacity 0.3s;
+            opacity: 0; /* Hidden by default */
+        }
+
+        .mentor-card:hover .mentor-details {
+            display: flex; /* Show details on hover */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1; /* Make visible */
+        }
+
+        .mentor-card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease; /* Image transition */
+        }
+
+        .mentor-card:hover img {
+            transform: scale(1.05); /* Slight zoom effect on image */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background-color 0.3s; /* Button transition */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Mentors</h1>
+    </header>
+
+    <div class="mentor-carousel">
+        <!-- Mentor Cards -->
+        <div class="mentor-card">
+            <img src="mentor1.jpg" alt="Dr. John Doe">
+            <div class="mentor-details">
+                <h3>Dr. John Doe</h3>
+                <p>Phone: 123-456-7890<br>Email: johndoe@sliet.ac.in<br>Qualifications: PhD in Computer Science</p>
+                <button onclick="bookSession('Dr. John Doe')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor2.jpg" alt="Dr. Jane Smith">
+            <div class="mentor-details">
+                <h3>Dr. Jane Smith</h3>
+                <p>Phone: 234-567-8901<br>Email: janesmith@sliet.ac.in<br>Qualifications: PhD in Mathematics</p>
+                <button onclick="bookSession('Dr. Jane Smith')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor3.jpg" alt="Prof. Richard Roe">
+            <div class="mentor-details">
+                <h3>Prof. Richard Roe</h3>
+                <p>Phone: 345-678-9012<br>Email: richardroe@sliet.ac.in<br>Qualifications: MSc in Physics</p>
+                <button onclick="bookSession('Prof. Richard Roe')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor4.jpg" alt="Dr. Emily Davis">
+            <div class="mentor-details">
+                <h3>Dr. Emily Davis</h3>
+                <p>Phone: 456-789-0123<br>Email: emilydavis@sliet.ac.in<br>Qualifications: PhD in Chemistry</p>
+                <button onclick="bookSession('Dr. Emily Davis')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor5.jpg" alt="Mr. Alex Johnson">
+            <div class="mentor-details">
+                <h3>Mr. Alex Johnson</h3>
+                <p>Phone: 567-890-1234<br>Email: alexjohnson@sliet.ac.in<br>Qualifications: MBA</p>
+                <button onclick="bookSession('Mr. Alex Johnson')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor6.jpg" alt="Dr. Sarah Wilson">
+            <div class="mentor-details">
+                <h3>Dr. Sarah Wilson</h3>
+                <p>Phone: 678-901-2345<br>Email: sarahwilson@sliet.ac.in<br>Qualifications: PhD in Biology</p>
+                <button onclick="bookSession('Dr. Sarah Wilson')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor7.jpg" alt="Dr. Peter Brown">
+            <div class="mentor-details">
+                <h3>Dr. Peter Brown</h3>
+                <p>Phone: 789-012-3456<br>Email: peterbrown@sliet.ac.in<br>Qualifications: PhD in Engineering</p>
+                <button onclick="bookSession('Dr. Peter Brown')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor8.jpg" alt="Ms. Linda Garcia">
+            <div class="mentor-details">
+                <h3>Ms. Linda Garcia</h3>
+                <p>Phone: 890-123-4567<br>Email: lindagarcia@sliet.ac.in<br>Qualifications: MA in Literature</p>
+                <button onclick="bookSession('Ms. Linda Garcia')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor9.jpg" alt="Mr. David Lee">
+            <div class="mentor-details">
+                <h3>Mr. David Lee</h3>
+                <p>Phone: 901-234-5678<br>Email: davidlee@sliet.ac.in<br>Qualifications: BSc in Information Technology</p>
+                <button onclick="bookSession('Mr. David Lee')">Book Session</button>
+            </div>
+        </div>
+        <div class="mentor-card">
+            <img src="mentor10.jpg" alt="Dr. Michelle Chen">
+            <div class="mentor-details">
+                <h3>Dr. Michelle Chen</h3>
+                <p>Phone: 012-345-6789<br>Email: michellechen@sliet.ac.in<br>Qualifications: PhD in Environmental Science</p>
+                <button onclick="bookSession('Dr. Michelle Chen')">Book Session</button>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>&copy; 2024 SLIET Mentorship Platform. All rights reserved.</p></footer>
+
+    <script>
+        function bookSession(mentorName) {
+            alert(`Session booked with ${mentorName}`);
+        }
+    </script>
+</body>
+</html>
